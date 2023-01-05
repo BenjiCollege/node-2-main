@@ -19,7 +19,7 @@ export const postCharacter = (req, res) => {
   });
 }
 export const getCharacterById = (req, res) => {
-  const id = req.params.id;
+  const id = parseInt(req.params.id);
   res.status(200).send({
     message: "Here is the character you requested",
     character: charactersArray[id],
@@ -27,7 +27,7 @@ export const getCharacterById = (req, res) => {
   }); 
 }
 export const deleteCharacter = (req, res) => {
-  const id = req.params.id;
+  const id = parseInt(req.params.id);
   charactersArray.splice(id, 1);
   res.status(204).send({
     message: "Character deleted successfully",
